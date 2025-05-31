@@ -1,0 +1,187 @@
+/* .listings{
+    padding-left: 30px;
+} */
+body{
+    font-family: "Plus Jakarta Sans", sans-serif;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    
+
+}
+.container{
+    flex:1;
+}
+nav{
+    font-size: 1rem;
+    height: 100px;
+    background-color: white;
+    display: flex;
+   
+    /* border-bottom: 2px solid rgb(172, 172, 172); */
+}
+.wanderlust{
+    font-weight: 500;
+    font-size: 40px;
+}
+h1,ul,li{
+    margin-left: 20px;
+}
+.nav-link{
+    color: #222222;
+}
+
+/*footer*/
+footer{
+    width: 100%;
+    
+    height: 150px;
+    display: flex;
+    font-size: 1.2rem;
+    justify-content: center; 
+     text-align: center;
+    background: rgb(241, 241, 241);
+    
+    
+}
+.f-info-social,.f-info-details,.f-info-compname{
+    height:33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.f-info-social i{
+    
+    color: #222222;
+    margin: 0 6px 0 6px;
+    font-size: 1.2rem;
+}
+.f-info-details a{
+    
+    margin: 0 3px 0 3px;
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-details a:hover{
+    text-decoration: underline;
+}
+.f-info-compname a{
+    text-decoration: none;
+    color: #222222;
+    
+}
+.f-info-compname a:hover{
+    text-decoration: underline;
+}
+
+/* card */
+
+.listing-card{
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    border: none;
+    /* width: 100% !important; */
+
+}
+.card-img-top{
+    height: 18rem;
+    width: 100% !important;
+    
+    border-radius: 0.5rem;
+    object-fit: cover !important;
+}
+
+
+
+.card-text{
+    font-weight: 500;
+}
+.card-body{
+    padding: 0 !important;
+}
+.row a{
+ width: 33%;
+    text-decoration: none;
+    color: #222222;
+}
+
+.card-img-overlay{
+    opacity:0;
+    color:black;
+}
+
+.card-img-overlay:hover{
+    opacity:0.5;
+    background: white;
+    
+}
+.add-btn{
+    border: none;
+    background-color: #fe424d;
+}
+.edit-btn{
+    border: none;
+    background-color: #fe424d;
+}
+
+/* show */
+.card-show{
+    height: 30rem !important;
+}
+
+.btn-edit{
+    border: none;
+    background-color: #fe424d;
+    
+}
+.showtitle{
+    display: flex;
+    justify-content: center;
+}
+.editshow{
+    display: flex;
+    justify-content: center;
+    /* padding: 0 5rem 0 5rem; */
+    margin-bottom: 1rem;
+}
+.editshowbtn{
+    margin:0 10px 0 10px;
+
+}
+.name{
+    text-transform: uppercase;
+}
+.listimg{
+    border-radius: 0.5rem;
+}
+ /* map */
+ #map{
+    height: 400px;
+    width:100%;
+    border-radius: 0.5rem;
+    
+ }
+ .form-check-input{
+    margin-left:1.2rem;
+    
+ }
+ .btn-search{
+    display: flex;
+    margin: 0.5rem;
+    background-color: #fe424d;
+    color: white;
+    border-radius:2rem;
+ }
+ .btn-search:hover{
+    background-color: #fe424d;
+    color: white;
+
+ }
+ .btn-search i{
+    margin: 0.3rem;
+ }
+ .input-search{
+    border-radius: 2rem;
+ }
+

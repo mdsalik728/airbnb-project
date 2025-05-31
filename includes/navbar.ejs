@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand text-danger wanderlust" href="/listings"><i class="fa-regular fa-compass"></i></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          
+         
+          <a class="nav-link" href="/listings">Explore</a>
+          
+         
+         
+          <!-- <a class="nav-link disabled" aria-disabled="true">Disabled</a> -->
+        </div>
+        <div class="navbar-nav ms-auto">
+          <form class="d-flex" action="/listings/find" method="post">
+            <input class="input-search form-control mr-sm-2" type="search" placeholder="Search destinations" aria-label="Search" name="query">
+            <button class="btn btn-search  my-2 my-sm-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i> Search</button>
+          </form>
+        </div>
+        
+
+
+        <div class=" navbar-nav ms-auto ">
+         <a class="nav-link "  href="/listings/neww">Airbnb your home</a>
+          <% if(!currUser){ %>
+          <a class="nav-link" href="/signup"><b> Sign Up</b></a>
+          <a class="nav-link" href="/login"><b>Login </b></a>
+          <%}%>
+          <% if(currUser){ %>
+            <a class="nav-link ">Hello! &nbsp;<em class="name"><%=currUser.username%> </em> </a>
+              
+          <a class="nav-link" href="/logout"><b>LogOut</b></a>
+          <%}%>
+        </div> 
+      </div>
+    </div>
+  </nav>
