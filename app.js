@@ -67,7 +67,6 @@ const store=MongoStore.create({ mongoUrl: dbUrl,
  })
 
 const sessionOptions={
-    store,
     secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
