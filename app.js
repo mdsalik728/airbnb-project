@@ -29,7 +29,7 @@ const multer=require("multer");
 
 
 
- app.listen(8081,(req,res)=>{
+app.listen(process.env.PORT,(req,res)=>{
  console.log("server is working");
  });
 
