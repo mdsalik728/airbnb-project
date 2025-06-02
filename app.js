@@ -61,8 +61,7 @@ const store=MongoStore.create({
     mongoUrl: dbUrl,
 
 const store=MongoStore.create({ mongoUrl: dbUrl,
->>>>>>> 9bcb64012b9c90ca3a97402f6b97b75e40c7b8cb
-    
+
         secret:process.env.SECRET,
     
     touchAfter: 24*60*60
@@ -73,11 +72,11 @@ const store=MongoStore.create({ mongoUrl: dbUrl,
  })
 
 const sessionOptions={
-<<<<<<< HEAD
+
     store:store,
-=======
+
   store:store,
->>>>>>> 9bcb64012b9c90ca3a97402f6b97b75e40c7b8cb
+
     secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
