@@ -60,9 +60,7 @@ app.set('trust proxy',1);
 const store=MongoStore.create({ 
     mongoUrl: dbUrl,
 
-const store=MongoStore.create({ mongoUrl: dbUrl,
-
-        secret:process.env.SECRET,
+    secret:process.env.SECRET,
     
     touchAfter: 24*60*60
 
