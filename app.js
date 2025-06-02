@@ -54,14 +54,9 @@ app.use(express.urlencoded({extended:true}));
 app.use(methodOverride("_method"));
 app.engine("ejs",ejsMate);
 app.use(express.static(path.join(__dirname,"/public" )));
-app.set('trust proxy',1);
 
-<<<<<<< HEAD
 const store=MongoStore.create({ 
     mongoUrl: dbUrl,
-=======
-const store=MongoStore.create({ mongoUrl: dbUrl,
->>>>>>> 9bcb64012b9c90ca3a97402f6b97b75e40c7b8cb
     
         secret:process.env.SECRET,
     
@@ -73,11 +68,7 @@ const store=MongoStore.create({ mongoUrl: dbUrl,
  })
 
 const sessionOptions={
-<<<<<<< HEAD
     store:store,
-=======
-  store:store,
->>>>>>> 9bcb64012b9c90ca3a97402f6b97b75e40c7b8cb
     secret:process.env.SECRET,
     resave:false,
     saveUninitialized:true,
