@@ -108,6 +108,13 @@ module.exports.index= async(req,res)=>{
         }
         listings.category=[];
         listings.category=req.body.listing.category;
+           let response=await geocodingClient.forwardGeocode({
+      query: `${req.body.listing.location},${req.body.listing.country}`,
+      limit: 1
+    }).send();
+        
+           
+           
 
        listings =await Listing.findByIdAndUpdate(id,{...req.body.listing});
        listings.geometry=response.body.features[0].geometry;
