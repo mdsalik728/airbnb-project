@@ -18,7 +18,8 @@
                 <img src="<%=listing.image.url%>" class="card-img-top card-show" alt="...">
                 <div class="card-body mt-1 col-12">
                         <p class="card-text">
-                            <div>Owned by: <i><%= listing.owner.username %></i></div>
+                            <div><b>Owned by: &nbsp;</b><i><%= listing.owner.username %></i></div>
+                            <div> <b>Contact info: </b>  &nbsp;<%=listing.owner.email %></div>
                         </p>
 
                         <p class="card-text">
@@ -34,9 +35,7 @@
                             <%=listing.location%> , <%=listing.country%><br>
                         </p>
 
-                        <!-- <p class="card-text">
-                            <br>
-                        </p> -->
+                        
                      
                 </div>
             </div>

@@ -4,7 +4,7 @@ const mbxGeocoding = require('@mapbox/mapbox-sdk/services/geocoding');
 const mapToken= process.env.MAP_TOKEN;
 const geocodingClient = mbxGeocoding({ accessToken: mapToken });
 
-module.exports.index=async(req,res)=>{
+module.exports.index= async(req,res)=>{
     let allListing= await Listing.find({});
     
     res.render("./listings/index.ejs",{allListing});
@@ -31,7 +31,7 @@ module.exports.index=async(req,res)=>{
     let listing;
     try{
     listing=await Listing.findById(id).populate({path:"reviews",populate:{path:"author"}}).populate("owner");
-    // console.log(listing)
+    
     }
     catch(e){
       req.flash("failure","Listing does not exist!!");
@@ -62,16 +62,6 @@ module.exports.index=async(req,res)=>{
    
     newlisting.geometry=response.body.features[0].geometry;
   
-     // let newlisting= new Listing({
-     //   title:listing.title,
-     //   description:listing.description,
-     //   image:{
-     //     filename:"newlisting",
-     //     url: listing.url,
-     //   },
-     //   price:listing.price,
-     //   location:listing.location,
-     // });
      await newlisting.save();
      req.flash("success","new listing created");
  
@@ -101,10 +91,15 @@ module.exports.index=async(req,res)=>{
          }
     
         let{id}= req.params;
-
+        let response=await geocodingClient.forwardGeocode({
+          query: `${req.body.listing.location},${req.body.listing.country}`,
+          limit: 1
+        }).send();
         
 
         let listings= await Listing.findById(id);
+
+
 
        
         if(res.locals.currUser && !res.locals.currUser._id.equals(listings.owner._id)){
@@ -115,9 +110,8 @@ module.exports.index=async(req,res)=>{
         listings.category=req.body.listing.category;
 
        listings =await Listing.findByIdAndUpdate(id,{...req.body.listing});
+       listings.geometry=response.body.features[0].geometry;
        
-        
-      
 
       if(typeof req.file !== 'undefined'){
         await deleteAsset(listings.image.filename);
@@ -125,8 +119,9 @@ module.exports.index=async(req,res)=>{
         let filename=req.file.filename;
        listings.image={url,filename};
 
-       await listings.save();
+      
       }
+      await listings.save();
 
 
        req.flash("success",'Listing updated successfully');
