@@ -117,7 +117,7 @@ module.exports.index=async(req,res)=>{
       query: `${req.body.listing.location},${req.body.listing.country}`,
       limit: 1
     }).send();
-           listings.geometry=response.body.features[0].geometry;
+        
            
            
 
