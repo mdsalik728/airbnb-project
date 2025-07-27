@@ -23,9 +23,9 @@
         <div class="invalid-feedback">please enter Description</div>
     </div>
     <div class="mb-2">
-        <label for="category">category</label>
-    <div class="mb-2">
-<label for="category">category</label>
+        <label for="category">category: </label>
+</br>
+
 <%for(category of categories){%>
     <label ><input type="checkbox" name="listing[category]" class="form-check-input " value= <%=category%> <%if(listing.category.includes(category)){%>
         checked <%}%> > <%=category%> </label>
